@@ -41,4 +41,4 @@ puts ("Are you signed in?")
 #store their answer in a variable
 user_signed_in=gets.strip
 
-user_permission(user_paid,user_canceled,user_admin,user_signed_in)
+user_permission(user_signed_in,user_admin,user_paid,user_canceled)
