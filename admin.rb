@@ -1,4 +1,24 @@
-require 'pry'
+
+def user_permission
+  puts "Did you pay your bills? yes/no"
+  paid = gets.strip
+  puts "Have you cancelled a deal? yes/no"
+  cancelled = gets.strip
+  puts "Are you an admin? yes/no"
+  admin = gets.strip
+  puts "Are you signed in? yes/no"
+  signed_in = gets.strip
+if paid == "no" or cancelled == "yes"
+  puts "Go away!"
+elsif admin == "yes" and signed_in == "yes"
+  puts "You can see and change all pages."
+elsif admin == "no" or signed_in == "yes"
+  puts "You can look but not touch!"
+elsif signed_in == "no"
+  puts "You can't see anything. Please sign in!"
+end
+end
+user_permission
 
 def user_permission
 
