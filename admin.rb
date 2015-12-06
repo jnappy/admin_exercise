@@ -5,6 +5,33 @@ require 'pry'
 #your site's users must sign in and if they are an admin they are able to make changes to the site
 
 ########################################################
+def user_permission
+
+  puts "Did you pay your bills? yes/no"
+  pay_bills = gets.strip
+
+  puts "Have you canceled a deal? yes/no"
+  canceled_deal = gets.strip
+
+  puts "Are you an admin? yes/no"
+  admin = gets.strip
+
+  puts "Are you signed in? yes/no"
+  signed_in = gets.strip
+
+  if pay_bills == "no" or canceled_deal == "yes"
+    puts "go away!"
+  elsif signed_in == "yes" and admin == "yes"
+    puts "You can see and change all the pages!"
+  elsif signed_in == "yes" and admin == "no"
+    puts "You can see all the pages!"
+  else
+    puts "You can't see any of the pages, please sign in!"
+  end
+end
+
+user_permission
+
 
 #write a function "user_permission" that accepts four parameters: signed_in, admin, paid, and canceled
 
