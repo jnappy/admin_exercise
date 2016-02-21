@@ -1,7 +1,7 @@
-require 'pry'
+def user_permission?
 
-#you run a site that offers a matching service between vendors selling laptops and customers 
-#..looking to purchase; you charge a fee to be listed as a vendor 
+  #you run a site that offers a matching service between vendors selling laptops and customers
+#..looking to purchase; you charge a fee to be listed as a vendor
 #your site's users must sign in and if they are an admin they are able to make changes to the site
 
 #######################################################
@@ -12,20 +12,40 @@ require 'pry'
 #if you user is signed in but they are not an admin, show "you can see all the pages!"
 #if the user is not signed in, show "you can't see any of the pages, please sign in!"
 
-#ask the user if they pay their bills (yes/no)
 
+#ask the user if they pay their bills (yes/no)
+puts("Do you pay your bills? yes/no")
+user_bills = gets.strip.downcase
 #store their answer in a variable
 
 #ask the user if they have canceled a deal (yes/no)
-
+puts("Have you cancelled a deal? yes/no")
+user_deal = gets.strip.downcase
 #store their answer in a variable
 
 #ask the user if they are an admin (yes/no)
+puts("Are you an admin? yes/no")
+user_admin = gets.strip.downcase
 
 #store their answer in a variable
 
 #ask the user if they are signed in (yes/no)
+puts("Are you signed in? yes/no")
+user_signin = gets.strip.downcase
 
 #store their answer in a variable
+if user_deal == 'yes' or user_bills == 'no'
+  puts("Go away!")
+elsif user_admin == 'yes'
+  puts("You can see and change all the pages")
+elsif user_signin == 'yes'
+  puts("you can see all the pages")
+elsif user_signin == 'no'
+  puts("you can't see any of the pages, please sign in")
+end
+end
 
-#call the function 
+
+
+#call the function
+user_permission?
