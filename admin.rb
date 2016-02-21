@@ -1,5 +1,36 @@
 require 'pry'
 
+def user_permission(signed_in, admin, paid, canceled)
+	if  paid != "yes" and canceled == "yes"
+		puts("go away")
+
+
+	elsif signed_in and admin == "yes"
+		puts("you can see and change all the pages!")
+
+	elsif signed_in == "yes" and admin != "yes"
+		puts("you can see all the pages!")	
+
+    elsif signed_in == "no" 
+		puts("you can't see any of the pages, please sign in!")
+	end
+end
+			
+
+puts("Do you pay your bills?")
+paid = gets.strip 
+
+puts("Have you canceled a deal?")
+canceled = gets.strip 
+
+puts("Are you an admin?")
+admin = gets.strip 
+
+puts("Are you signed in?")
+signed_in = gets.strip 
+
+user_permission(signed_in, admin, paid, canceled)
+
 #you run a site that offers a matching service between vendors selling laptops and customers 
 #..looking to purchase; you charge a fee to be listed as a vendor 
 #your site's users must sign in and if they are an admin they are able to make changes to the site
