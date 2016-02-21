@@ -1,7 +1,40 @@
 require 'pry'
 
-#you run a site that offers a matching service between vendors selling laptops and customers 
-#..looking to purchase; you charge a fee to be listed as a vendor 
+def user_permission(signed_in, admin, paid, cancelled)
+
+  if paid == 'no' or cancelled == 'yes'
+      puts("go away!")
+
+  elsif signed_in == 'yes' and admin == 'yes'
+      puts("you can see and change all the pages!")
+
+  elsif signed_in == 'yes' and admin =='no'
+      puts("you can see all the pages!")
+
+  elsif signed_in == 'no'
+      puts("you can't see any of the pages, please sign in!")
+  end
+
+end
+
+    puts("do you pay your bills? yes or no.")
+    user_paid = gets.strip
+
+    puts("have you ever cancelled?")
+    user_cancelled = gets.strip
+
+    puts("are you an admin?")
+    user_admin = gets.strip
+
+    puts("are you signed in?")
+    user_signed_in = gets.strip
+
+user_permission(user_paid, user_signed_in, user_admin, user_cancelled)
+
+
+
+#you run a site that offers a matching service between vendors selling laptops and customers
+#..looking to purchase; you charge a fee to be listed as a vendor
 #your site's users must sign in and if they are an admin they are able to make changes to the site
 
 #######################################################
@@ -28,4 +61,4 @@ require 'pry'
 
 #store their answer in a variable
 
-#call the function 
+#call the function
