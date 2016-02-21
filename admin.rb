@@ -1,25 +1,31 @@
 require 'pry'
 
-def "matching service for vendors and customers"
-  puts("Are you looking for matching service? Please answer 'yes' or 'no'")
-  user_answer = gets.strip.downcase
-  if user_answer.include =='yes'
-    puts("Are you signed in?")
-    if user_answer.include =='yes'
-      puts(user_permission = signed_in, admin, paid and canceled)
-      if user_answer for paid == 'no'
+def user_permission(signed_in, admin, paid, canceled)
+      if paid == 'no' or canceled =='yes'
         puts("go away")
-        if user_answer for signed_in == 'yes'and admin == 'yes'
+        elsif signed_in == 'yes'and admin == 'yes'
           puts("you can see and change all the pages")
-          if user_answer for signed_in == 'yes' and admin == 'no'
+        elsif signed_in == 'yes' and admin == 'no'
             puts("you can see all the pages")
-            if user_answer for signed_in == 'no'
+        elsif signed_in == 'no'
               puts("you can't see any of the pages, please sign in!")
             end
-            puts("Have you paid your bills? Please answer 'yes or 'no'")
+          end
 
-            
-      user_permission
+          #ask the user if they pay their bills (yes/no)
+    puts("Have you paid your bills? Please answer 'yes' or 'no'")
+    user_paid = gets.strip.downcase
+
+    puts("Have you canceled a deal? Please answer 'yes' or 'no'")
+            user_canceled = gets.strip.downcase
+
+    puts("Are you an admin? Please answer 'yes' or 'no'")
+      user_admin = gets.strip.downcase
+
+    puts("Are you signed in? Please answer 'yes' or 'no'")
+      user_signed_in = gets.strip.downcase
+
+    user_permission(user_signed_in,user_admin,user_paid, user_canceled)
 
 
 #you run a site that offers a matching service between vendors selling laptops and customers
@@ -34,7 +40,6 @@ def "matching service for vendors and customers"
 #if you user is signed in but they are not an admin, show "you can see all the pages!"
 #if the user is not signed in, show "you can't see any of the pages, please sign in!"
 
-#ask the user if they pay their bills (yes/no)
 
 #store their answer in a variable
 
