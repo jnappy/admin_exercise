@@ -51,6 +51,20 @@ def user_permission()
   else
     puts "You can't see any pages, please sign in"
   end
+
+  # if signed_in =='yes'
+  #   if paid == 'yes'
+  #     if admin == 'yes'
+  #       puts 'You can see and change all the pages'
+  #     else
+  #       puts 'You can only see all the pages'
+  #     end
+  #   elsif (paid =='no') or (cancelled=='yes')
+  #     puts 'Go away!'
+  #   end
+  # else
+  #   puts "You can't see any pages, please sign in"
+  # end
 end
 
 # #ask the user if they pay their bills (yes/no)
