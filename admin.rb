@@ -12,45 +12,70 @@ require 'pry'
 #if the user is signed in but they are not an admin, show "you can see all the pages!"
 #if the user is not signed in, show "you can't see any of the pages, please sign in!"
 
-def user_permission(signed_in, admin,paid,cancelled)
+def user_permission()
+  #ask the user if they are signed in (yes/no)
+  puts "Are you signed in? (yes/no)"
+
+  #store their answer in a variable
+  signed_in = gets.strip
+
   if signed_in =='yes'
+    #ask the user if they pay their bills (yes/no)
+    puts "Have you paid your bills? (yes/no)"
+
+    #store their answer in a variable
+    paid = gets.strip
+
     if paid == 'yes'
+
+      puts "Are you an admin? (yes/no)"
+      admin = gets.strip
+
       if admin == 'yes'
         puts 'You can see and change all the pages'
       else
         puts 'You can only see all the pages'
       end
-    elsif (paid =='no') or (cancelled=='yes')
-      puts 'Go away!'
+    else
+      #ask the user if they have cancelled a deal (yes/no)
+      puts "Have you cancelled a deal? (yes/no)"
+
+      #store their answer in a variable
+      cancelled = gets.strip
+      if cancelled == 'yes'
+        puts 'Go away!'
+      else
+        puts "You need to pay your bills"
+      end
     end
   else
     puts "You can't see any pages, please sign in"
   end
 end
 
-#ask the user if they pay their bills (yes/no)
-puts "Have you paid your bills? (yes/no)"
+# #ask the user if they pay their bills (yes/no)
+# puts "Have you paid your bills? (yes/no)"
+#
+# #store their answer in a variable
+# user_bills = gets.strip
 
-#store their answer in a variable
-user_bills = gets.strip
+# #ask the user if they have cancelled a deal (yes/no)
+# puts "Have you cancelled a deal? (yes/no)"
+#
+# #store their answer in a variable
+# user_cancel = gets.strip
 
-#ask the user if they have cancelled a deal (yes/no)
-puts "Have you cancelled a deal? (yes/no)"
+# #ask the user if they are an admin (yes/no)
+# puts "Are you an admin? (yes/no)"
+#
+# #store their answer in a variable
+# user_admin = gets.strip
 
-#store their answer in a variable
-user_cancel = gets.strip
-
-#ask the user if they are an admin (yes/no)
-puts "Are you an admin? (yes/no)"
-
-#store their answer in a variable
-user_admin = gets.strip
-
-#ask the user if they are signed in (yes/no)
-puts "Are you signed in? (yes/no)"
-
-#store their answer in a variable
-user_signed_in = gets.strip
+# #ask the user if they are signed in (yes/no)
+# puts "Are you signed in? (yes/no)"
+#
+# #store their answer in a variable
+# user_signed_in = gets.strip
 
 #call the function
-user_permission(user_signed_in,user_admin,user_bills,user_cancel)
+user_permission
