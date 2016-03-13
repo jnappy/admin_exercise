@@ -6,6 +6,38 @@ require 'pry'
 
 #######################################################
 
+def user_permission(paid, cancelled, admin, signed_in)
+	if paid == "no" or cancelled == "yes"
+		puts "Go away!"
+	elsif admin == "yes" and signed_in == "yes"
+		puts "You can see and change all the pages!"
+	elsif admin == "no" and signed_in == "yes"
+		puts "You can see all the pages"
+	else
+		puts "You can't see any of the pages, please sign in!"
+	end
+end
+
+puts "Did you pay your Bill?"
+puts "Yes or No"
+user_paid = gets.strip.downcase
+
+puts "Did you cancel you deal?"
+puts "Yes or No"
+user_cancelled = gets. strip.downcase
+
+puts "Are you an Admin?"
+puts "Yes or No"
+user_admin = gets.strip.downcase
+
+puts "Did you sign in?"
+puts "Yes or No"
+user_signed_in = gets.strip.downcase
+
+user_permission(user_paid, user_cancelled, user_admin, user_signed_in)		
+								
+				
+
 #write a function "user_permission" that accepts four parameters: signed_in, admin, paid, and cancelled
 #if the user doesn't pay their bills or has canceled a deal, show "go away!"
 #if the user is signed in and they are an admin, show "you can see and change all the pages!"
