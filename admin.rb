@@ -30,7 +30,7 @@ puts("Do you pay your bills? Input yes or no.")
 
 #store their answer in a variable
 
-user_paid = gets.strip
+user_paid = gets.strip.downcase
 
 #ask the user if they have cancelled a deal (yes/no)
 
@@ -38,7 +38,7 @@ puts("Have you cancelled a deal? Input yes or no.")
 
 #store their answer in a variable
 
-user_cancelled = gets.strip
+user_cancelled = gets.strip.downcase
 
 #ask the user if they are an admin (yes/no)
 
@@ -46,7 +46,7 @@ puts("Are you an admin? Input yes or no.")
 
 #store their answer in a variable
 
-user_admin = gets.strip
+user_admin = gets.strip.downcase
 
 #ask the user if they are signed in (yes/no)
 
@@ -54,7 +54,7 @@ puts("Are you signed in? Input yes or no.")
 
 #store their answer in a variable
 
-user_signed_in = gets.strip
+user_signed_in = gets.strip.downcase
 
 
 #call the function!!
