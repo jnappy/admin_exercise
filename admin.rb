@@ -11,23 +11,44 @@ require 'pry'
 #if the user is signed in and they are an admin, show "you can see and change all the pages!"
 #if the user is signed in but they are not an admin, show "you can see all the pages!"
 #if the user is not signed in, show "you can't see any of the pages, please sign in!"
+def user_permission(signed_in, admin, paid, cancelled)
+  if signed_in == "yes" and paid == "no" or cancelled == "yes"
+    puts("Go away!")
+  elsif signed_in == "yes" and admin == "yes"
+    puts("You can see and change all pages")
+  elsif signed_in == "yes" and admin == "no"
+    puts("You can see all the pages")
+  else
+    puts("You can't see any of the pages, please sign in!")
+  end
+end
 
 #ask the user if they pay their bills (yes/no)
+puts("Have you paid your all your bills?")
 
 #store their answer in a variable
+user_paid = gets.strip.downcase
 
 #ask the user if they have cancelled a deal (yes/no)
+puts("Have you cancelled a deal?")
 
 #store their answer in a variable
+user_cancelled = gets.strip.downcase
 
 #ask the user if they are an admin (yes/no)
+puts("Are you an admin user?")
 
 #store their answer in a variable
+user_admin = gets.strip.downcase
 
 #ask the user if they are signed in (yes/no)
+puts("Have you signed in?")
 
 #store their answer in a variable
+user_signed_in = gets.strip.downcase
 
 
 
 #call the function!!
+user_permission(user_signed_in,user_admin,user_paid,user_cancelled)
+
